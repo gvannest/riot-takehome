@@ -1,0 +1,24 @@
+// TODO:
+// Decrypt : what does it mean "should detect encrypted strings"?
+// Docker
+// readme
+// Ajouter doc open api (swagger) ?
+// Créer et pousser sur repo git
+
+
+
+// TODO: à dire à Riot
+// Etrange : en a un endpoint encrypt et decrypt, mais c'est plutôt de l'encodage (encode / decode) => J'ai gardé ce naming pour les nom des services et méthodes
+// Du coup cela prête à confusion : 
+// "The Base64 encryption algorithm should be easily replaceable with another algorithm without requiring significant changes to the codebase."
+// => pas que pour l'encodage ? aussi pour le chiffrement ? Auquel cas le fichier de conf ne suffit pas pour changer d'algo => autre lib (crypto) + secret key
+// => J'ai fait que l'encodage car selon moi encodage / chiffrement => 2 objectifs différents; ne devraient pas être mergés / abstraits derrière la même abstraction
+
+// Verify => utilise le meme algo de chiffrement que sign. En fonction du use case on pourrait avoir une autre conf pour être compatible avec les anciens algos si on change
+
+// process.env.HMAC_SECRET_KEY in test file => good enough for the exercise
+// Real app : I would have probably either mock the ConfigService, or - preferred in end-to-end test - made a .env.test file and load the 
+
+// I could have gone further not to directly return the responseDto but something more domain-oriented, with a mapping to a Dto in the controller. But overkill for the exercise
+
+// J'aurais mis de la validation de la variable env => au build ça casse plutôt que runtime
