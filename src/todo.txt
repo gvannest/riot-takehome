@@ -1,6 +1,4 @@
 // TODO:
-// Decrypt : what does it mean "should detect encrypted strings"?
-// Docker
 // readme
 // Ajouter doc open api (swagger) ?
 // Créer et pousser sur repo git

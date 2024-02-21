@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$1" == "run" ]; then
+    docker run --rm --tty -i -p 3000:3000 --name riot nestjs-app
+elif [ "$1" == "test" ]; then
+    docker run --rm --tty -i -p 3000:3000 --name riot nestjs-app yarn test
+elif [ "$1" == "build" ]; then
+    docker build -t nestjs-app .
+else
+    echo "Usage: $0 {run|test|build}"
+fi
