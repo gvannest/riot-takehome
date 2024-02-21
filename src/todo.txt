@@ -1,6 +1,6 @@
 // TODO:
-// readme
-// Ajouter doc open api (swagger) ?
+// readme => usage of rt script + swagger url
+// Ajouter doc open api (swagger) ? => put examples
 // Créer et pousser sur repo git
 
 

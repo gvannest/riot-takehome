@@ -19,12 +19,16 @@ import {
   SignatureRequestDto,
   signatureRequestSchema,
 } from './dtos/signature-request.dto';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller()
+@ApiTags('Signature')
 export class SignatureController {
   constructor(private readonly signatureService: SignatureService) {}
 
   @Post('/sign')
+  @ApiOperation({ summary: 'Sign payload and return signature' })
+  @ApiResponse({ status: 400, description: 'Input wrongly formatted' })
   @UsePipes(new ZodValidationPipe(signatureRequestSchema))
   sign(@Body() signatureRequestDto: SignatureRequestDto): SignatureResponseDto {
     return this.signatureService.sign(signatureRequestDto);

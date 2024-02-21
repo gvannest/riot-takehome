@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UsePipes } from '@nestjs/common';
+import { Body, Controller, HttpStatus, Post, UsePipes } from '@nestjs/common';
 import { EncryptionService } from './encryption.service';
 import {
   DecryptionRequestDto,
@@ -11,12 +11,23 @@ import {
   encryptionRequestSchema,
 } from './dtos/encryption-request.dto';
 import { EncryptionResponseDto } from './dtos/encryption.response.dto';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller()
+@ApiTags('Encryption')
 export class EncryptionController {
   constructor(private readonly encryptionService: EncryptionService) {}
 
   @Post('/encrypt')
+  @ApiOperation({ summary: 'Encrypt payload' })
+  @ApiResponse({
+    status: HttpStatus.CREATED,
+    description: 'Payload successfuly encrypted',
+  })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'Input wrongly formatted',
+  })
   @UsePipes(new ZodValidationPipe(encryptionRequestSchema))
   encrypt(
     @Body() encryptionRequestDto: EncryptionRequestDto,
@@ -25,6 +36,8 @@ export class EncryptionController {
   }
 
   @Post('/decrypt')
+  @ApiOperation({ summary: 'Decrypt payload' })
+  @ApiResponse({ status: 400, description: 'Input wrongly formatted' })
   @UsePipes(new ZodValidationPipe(decryptionRequestSchema))
   decrypt(
     @Body() decryptionRequestDto: DecryptionRequestDto,
