@@ -10,35 +10,17 @@ This is a proposed implementation for the [riot-takehome assignment](https://git
 
   ```console
 
-    foo:~$ git clone git@github.com:gvannest/riot-takehome.git
+    ~$ git clone git@github.com:gvannest/riot-takehome.git
 
     ```
 
 ## 3. How to run the app
 
-- Go to the root of the repository :
+- Go to the root of the repository : `cd riot-takehome`
 
-    ```console
+- Run the following command to build the image : `./rt build`
 
-        foo:~$ cd riot-takehome
-
-    ```
-
-- Run the following command to build the image :
-
-    ```console
-
-        foo:~$ ./rt build
-
-    ```
-
-- Run the following command to run the container :
-
-    ```console
-
-        foo:~$ ./rt run
-
-    ```
+- Run the following command to run the container : `./rt run`
 
 The app will be available on `http://localhost:3000`.
 
@@ -48,6 +30,6 @@ The app will be available on `http://localhost:3000`.
 
     ```console
 
-        foo:~$ ./rt tests
+        ~$ ./rt tests
 
     ```
