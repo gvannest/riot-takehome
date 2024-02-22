@@ -18,26 +18,26 @@ This is a proposed implementation for the [riot-takehome assignment](https://git
 
 - Go to the root of the repository :
 
-```console
+    ```console
 
-    foo:~$ cd riot-takehome
+        foo:~$ cd riot-takehome
 
-```
+    ```
 
 - Run the following command to build the image : 
 
-```console
+    ```console
 
-    foo:~$ ./rt build
+        foo:~$ ./rt build
 
-```
+    ```
 
 - Run the following command to run the container : 
 
-```console
+    ```console
 
-    foo:~$ ./rt run
+        foo:~$ ./rt run
 
-```
+    ```
 
 The app will be available on `http://localhost:3000`.
