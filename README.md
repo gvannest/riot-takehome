@@ -24,7 +24,7 @@ This is a proposed implementation for the [riot-takehome assignment](https://git
 
     ```
 
-- Run the following command to build the image : 
+- Run the following command to build the image :
 
     ```console
 
@@ -32,7 +32,7 @@ This is a proposed implementation for the [riot-takehome assignment](https://git
 
     ```
 
-- Run the following command to run the container : 
+- Run the following command to run the container :
 
     ```console
 
