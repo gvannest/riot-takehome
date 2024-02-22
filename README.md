@@ -14,7 +14,7 @@ This is a proposed implementation for the [riot-takehome assignment](https://git
 
     ```
 
-## 3. How to run
+## 3. How to run the app
 
 - Go to the root of the repository :
 
@@ -41,3 +41,13 @@ This is a proposed implementation for the [riot-takehome assignment](https://git
     ```
 
 The app will be available on `http://localhost:3000`.
+
+## 4. How to run the tests
+
+- Once the image is built, run the following command to run the tests :
+
+    ```console
+
+        foo:~$ ./rt tests
+
+    ```
