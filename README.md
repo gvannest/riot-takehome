@@ -1,11 +1,11 @@
 # riot-takehome
 
 ## 1. Description
+
 This is a proposed implementation for the [riot-takehome assignment](https://github.com/tryriot/take-home).
 
 ## 2. Prerequesite
 
-- Docker
 - Pull the repository onto your local machine :
 
   ```console
@@ -18,18 +18,22 @@ This is a proposed implementation for the [riot-takehome assignment](https://git
 
 - Go to the root of the repository : `cd riot-takehome`
 
+### 3.1. Using Docker
+
 - Run the following command to build the image : `./rt build`
 
 - Run the following command to run the container : `./rt run`
 
-The app will be available on `http://localhost:3000`.
+  The app will be available on `http://localhost:3000`.
 
-## 4. How to run the tests
+- Run the following command to run the tests : `./rt tests`
 
-- Once the image is built, run the following command to run the tests :
+### 3.2. Using Node.js
 
-    ```console
+- Make sure you have node.js version 21 or above installed on your machine, as well as the yarn package manager.
 
-        ~$ ./rt tests
+- Run the following command to run the app : `yarn start`
 
-    ```
+  The app will be available on `http://localhost:3000`.
+
+- Run the following command to run the tests : `yarn test`
