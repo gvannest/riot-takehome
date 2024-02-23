@@ -32,6 +32,8 @@ This is a proposed implementation for the [riot-takehome assignment](https://git
 
 - Make sure you have node.js version 21 or above installed on your machine, as well as the yarn package manager.
 
+- Run the following command to install the dependencies : `yarn install`
+  
 - Run the following command to run the app : `yarn start`
 
   The app will be available on `http://localhost:3000`.
