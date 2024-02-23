@@ -3,6 +3,7 @@ import { BinaryToTextEncoding, createHmac } from 'crypto';
 import { SignatureResponseDto } from './dtos/signature-response.dto';
 import { VerifySignatureError } from './signature.error';
 import { SignatureRequestDto } from './dtos/signature-request.dto';
+import { SignatureParameters } from './types';
 
 @Injectable()
 export class SignatureService {
@@ -11,14 +12,10 @@ export class SignatureService {
   private readonly digestScheme: BinaryToTextEncoding;
 
   constructor({
-    secretKey,
+    secretKey: secretKey,
     algorithm,
     digestScheme,
-  }: {
-    secretKey: string;
-    algorithm: string;
-    digestScheme: BinaryToTextEncoding;
-  }) {
+  }: SignatureParameters) {
     this.secretKey = secretKey;
     this.algorithm = algorithm;
     this.digestScheme = digestScheme;

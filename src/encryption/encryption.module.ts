@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { EncryptionController } from './encryption.controller';
 import { EncryptionService } from './encryption.service';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule, ConfigType } from '@nestjs/config';
 import { encryptionConfig } from './encryption.config';
 
 @Module({
@@ -10,12 +10,9 @@ import { encryptionConfig } from './encryption.config';
   providers: [
     {
       provide: EncryptionService,
-      useFactory: (configService: ConfigService) =>
-        new EncryptionService({
-          encoding: configService.getOrThrow('encryption.encodingScheme'),
-          decoding: configService.getOrThrow('encryption.decodingScheme'),
-        }),
-      inject: [ConfigService],
+      useFactory: (config: ConfigType<typeof encryptionConfig>) =>
+        new EncryptionService(config),
+      inject: [encryptionConfig.KEY],
     },
   ],
 })
