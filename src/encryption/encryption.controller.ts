@@ -4,7 +4,7 @@ import {
   DecryptionRequestDto,
   decryptionRequestSchema,
 } from './dtos/decryption-request.dto';
-import { DecryptionResponseDto } from './dtos/decryption.response.dto';
+import { DecryptionResponseDto } from './dtos/decryption-response.dto';
 import { ZodValidationPipe } from '../../lib-helpers/zod/zod-validation.pipe';
 import {
   EncryptionRequestDto,

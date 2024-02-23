@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DecryptionRequestDto } from './dtos/decryption-request.dto';
-import { DecryptionResponseDto } from './dtos/decryption.response.dto';
+import { DecryptionResponseDto } from './dtos/decryption-response.dto';
 import { EncryptionRequestDto } from './dtos/encryption-request.dto';
 import { EncryptionResponseDto } from './dtos/encryption.response.dto';
 import { EncryptionParameters } from './types';
